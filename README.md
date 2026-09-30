@@ -107,10 +107,6 @@ browser-based proof of concept.
 - [**Audits**](https://ponk.exchange/docs/audits) in the docs, with the scope and
   coverage tables
 
-That engagement covered the web surface. It did not read the **Ponk Clouds**
-on-chain program, so it says nothing about the bin math, the swap accounting or
-the vault invariants, and the `ponk-rain` warning on the program stands.
-
 To report something, see
 [SECURITY.md](https://github.com/ponkexchange/ponkexchange/blob/main/SECURITY.md).
 
