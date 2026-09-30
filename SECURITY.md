@@ -28,17 +28,12 @@ reproduction is always preferred and is never treated as a weaker report.
 The report is published unedited:
 
 - [Report (PDF)](https://ponk.exchange/audits/zauth-ponk-exchange-2026-09-29.pdf)
-- [Audits](https://ponk.exchange/docs/audits) in the docs, with the open findings
-  and the coverage table
+- [Audits](https://ponk.exchange/docs/audits) in the docs, with the scope and
+  coverage tables
 
 The engagement exercised 51 endpoints, 5 subdomains, 4 forms and 58 input
 vectors through browser automation, crawling and JavaScript analysis, and
 verified findings with browser-based proof of concept.
-
-**Three high-severity findings are open as of the report date.** They are named
-on the audits page. A published report with open findings is the honest state of
-a system assessed today, and each row stays visible until it is closed, with the
-date and the change that closed it.
 
 ## What has NOT been reviewed by a third party
 
