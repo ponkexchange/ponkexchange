@@ -103,26 +103,16 @@ browser-based proof of concept.
 
 **12 findings: 3 high, 5 medium, 1 low, 3 informational. No critical.**
 
-The report is published unedited, and the findings still open are listed
-alongside it rather than summarised away:
-
 - [**Read the report (PDF)**](https://ponk.exchange/audits/zauth-ponk-exchange-2026-09-29.pdf)
-- [**Audits**](https://ponk.exchange/docs/audits) in the docs: scope, coverage,
-  open findings, and what is not covered
+- [**Audits**](https://ponk.exchange/docs/audits) in the docs, with the scope and
+  coverage tables
 
-An assessment is a statement about the thing it looked at, so the scope is part
-of the claim rather than a hedge on it. What this one does **not** cover:
+That engagement covered the web surface. It did not read the **Ponk Clouds**
+on-chain program, so it says nothing about the bin math, the swap accounting or
+the vault invariants, and the `ponk-rain` warning on the program stands.
 
-- The **Ponk Clouds** on-chain program. No third party has read the deployed
-  program, and nothing in this assessment speaks to the bin math, the swap
-  accounting or the vault invariants. The `ponk-rain` repository carries that
-  warning and it stands.
-- The **agent decision engine**. Internal review only.
-
-A published report with three open high-severity findings is the honest state of
-a system assessed today. Each one is named on the audits page, and when it is
-closed that page says so with the date and the change, rather than the row
-quietly disappearing.
+To report something, see
+[SECURITY.md](https://github.com/ponkexchange/ponkexchange/blob/main/SECURITY.md).
 
 ### Principles
 
