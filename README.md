@@ -8,6 +8,7 @@
   <a href="https://ponk.exchange"><b>ponk.exchange</b></a> &middot;
   <a href="https://ponk.exchange/docs">Docs</a> &middot;
   <a href="https://ponk.exchange/docs/developers/agents-api">API</a> &middot;
+  <a href="https://ponk.exchange/docs/audits">Audits</a> &middot;
   <a href="https://ponk.exchange/start">Start earning</a>
 </p>
 
@@ -92,6 +93,36 @@ overriding one looks profitable.
 
 **A recenter is one transaction.** Remove, close and re-open land together or not at
 all. A remove that lands without its re-open leaves a user in cash and out of range.
+
+### Security
+
+The web application, the public API and the MCP server were assessed by **zauth
+(Vector)** on 29 September 2026: a deep scan across 51 endpoints, 5 subdomains,
+4 forms and 58 input vectors, run over 389 turns, with findings verified by
+browser-based proof of concept.
+
+**12 findings: 3 high, 5 medium, 1 low, 3 informational. No critical.**
+
+The report is published unedited, and the findings still open are listed
+alongside it rather than summarised away:
+
+- [**Read the report (PDF)**](https://ponk.exchange/audits/zauth-ponk-exchange-2026-09-29.pdf)
+- [**Audits**](https://ponk.exchange/docs/audits) in the docs: scope, coverage,
+  open findings, and what is not covered
+
+An assessment is a statement about the thing it looked at, so the scope is part
+of the claim rather than a hedge on it. What this one does **not** cover:
+
+- The **Ponk Clouds** on-chain program. No third party has read the deployed
+  program, and nothing in this assessment speaks to the bin math, the swap
+  accounting or the vault invariants. The `ponk-rain` repository carries that
+  warning and it stands.
+- The **agent decision engine**. Internal review only.
+
+A published report with three open high-severity findings is the honest state of
+a system assessed today. Each one is named on the audits page, and when it is
+closed that page says so with the date and the change, rather than the row
+quietly disappearing.
 
 ### Principles
 
