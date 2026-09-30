@@ -28,33 +28,11 @@ reproduction is always preferred and is never treated as a weaker report.
 The report is published unedited:
 
 - [Report (PDF)](https://ponk.exchange/audits/zauth-ponk-exchange-2026-09-29.pdf)
-- [Audits](https://ponk.exchange/docs/audits) in the docs, with the scope and
-  coverage tables
+- [Audits](https://ponk.exchange/docs/audits) in the docs
 
 The engagement exercised 51 endpoints, 5 subdomains, 4 forms and 58 input
 vectors through browser automation, crawling and JavaScript analysis, and
 verified findings with browser-based proof of concept.
-
-## What has NOT been reviewed by a third party
-
-An assessment only speaks about what it looked at, so this half matters as much
-as the table above.
-
-| Area | Third-party reviewed |
-| --- | --- |
-| ponk.exchange web application | Yes, zauth Vector, 29 Sep 2026 |
-| Public API and authenticated endpoints | Yes, zauth Vector, 29 Sep 2026 |
-| MCP server and its tools | Yes, zauth Vector, 29 Sep 2026 |
-| Ponk Clouds on-chain program | **No** |
-| Auto LP agent decision engine | **No**, internal review only |
-
-The **Ponk Clouds** program is deployed on mainnet and has had no third-party
-review. Nothing in the zauth assessment speaks to its bin math, its swap
-accounting or its vault invariants. Its source and math crate are published so
-the numbers can be checked independently, but published source is not a
-substitute for a review and is not presented as one here. The
-[ponk-rain](https://github.com/ponkexchange/ponk-rain) repository carries an
-UNAUDITED warning on the program, and that warning stands.
 
 ## Scope of this repository
 
