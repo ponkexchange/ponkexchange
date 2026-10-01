@@ -103,9 +103,21 @@ browser-based proof of concept.
 
 **12 findings: 3 high, 5 medium, 1 low, 3 informational. No critical.**
 
+**Every finding was remediated the following day, 30 September 2026.** Eight are
+fixed and closed; the ninth, a missing Content-Security-Policy, ships a policy
+plus a live violation collector in report-only mode and is described as
+partially fixed rather than closed, because report-only does not block.
+
+Each fix was verified against the LIVE SITE by re-running the assessor's own
+reproduction steps afterwards, not by reading the diff. Two examples of what
+that caught: the first attempt at the Content-Security-Policy silently replaced
+a stricter per-response policy on the image proxy, and the nonce rate limit was
+confirmed by sending 26 requests with 26 forged client-IP headers straight at
+the origin and watching them share one bucket.
+
 - [**Read the report (PDF)**](https://ponk.exchange/audits/zauth-ponk-exchange-2026-09-29.pdf)
-- [**Audits**](https://ponk.exchange/docs/audits) in the docs, with the scope and
-  coverage tables
+- [**Audits**](https://ponk.exchange/docs/audits) in the docs, with the per-finding
+  remediation table
 
 To report something, see
 [SECURITY.md](https://github.com/ponkexchange/ponkexchange/blob/main/SECURITY.md).
