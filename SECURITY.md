@@ -28,7 +28,23 @@ reproduction is always preferred and is never treated as a weaker report.
 The report is published unedited:
 
 - [Report (PDF)](https://ponk.exchange/audits/zauth-ponk-exchange-2026-09-29.pdf)
-- [Audits](https://ponk.exchange/docs/audits) in the docs
+- [Audits](https://ponk.exchange/docs/audits) in the docs, with a per-finding
+  remediation table
+
+## Remediation
+
+All 12 findings were remediated on 30 September 2026, the day after the report
+landed. Eight are closed. The missing Content-Security-Policy is **partially
+fixed**: a policy and a live violation collector ship on every page, but the
+full policy is in report-only mode, which by definition does not block. That is
+the staged approach the report itself recommends, and it is reported as
+partially fixed rather than closed on purpose.
+
+Every fix was verified against the live site by re-running the assessor's own
+reproduction, not by reading the change. That mattered twice: a first attempt at
+the Content-Security-Policy silently replaced a stricter per-response policy on
+the image proxy, and the rate-limit fix was only provable by sending forged
+client-IP headers directly to the origin and watching them share one bucket.
 
 The engagement exercised 51 endpoints, 5 subdomains, 4 forms and 58 input
 vectors through browser automation, crawling and JavaScript analysis, and
