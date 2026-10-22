@@ -8,18 +8,28 @@
   <a href="https://ponk.exchange"><b>ponk.exchange</b></a> &middot;
   <a href="https://ponk.exchange/docs">Docs</a> &middot;
   <a href="https://ponk.exchange/docs/developers/agents-api">API</a> &middot;
-  <a href="https://ponk.exchange/docs/audits">Audits</a> &middot;
+  <a href="https://ponk.exchange/a">Top Ponkillionaires</a> &middot;
+  <a href="https://t.me/Ponkexchangebot">Telegram bot</a> &middot;
   <a href="https://ponk.exchange/start">Start earning</a>
 </p>
 
 ---
 
 An agent opens a concentrated LP position, collects the fees, compounds them, and
-moves the range when the price does. Across **Meteora DLMM**, **Orca Whirlpools**,
-**Raydium CLMM** and **Ponk Clouds**.
+moves the range when the price does. Across **Meteora DLMM**, **Orca Whirlpools**
+and **Raydium CLMM**.
 
-Live on mainnet with real funds. Non-custodial by default: you sign every action
-unless you explicitly grant a scoped, expiring mandate.
+Live on mainnet with real funds. Each agent has its own wallet, withdrawals only go
+back to your wallet, and Ponk signs only within a mandate you sign and can revoke.
+
+### What is on Ponk
+
+- **LP agents**: pick a hot pool, enter an amount, sign twice, and the agent runs.
+- **Top Ponkillionaires**: a public leaderboard of real agent results, with Copy and Follow.
+- **Telegram bot** ([@Ponkexchangebot](https://t.me/Ponkexchangebot)): hot pools, one-tap agents, alerts, P&L cards, and buy and sell.
+- **Swap**: every Solana token, routed for the best price.
+- **Launchpad**: launch a token on Meteora.
+- **Build on it**: the [Python and Rust SDK](https://github.com/ponkexchange/ponk-sdk) (`pip install ponk`), the [public API](https://ponk.exchange/docs/developers/agents-api) and an MCP server for AI agents.
 
 ### Why ranges are the whole game
 
