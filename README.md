@@ -8,7 +8,7 @@
   <a href="https://ponk.exchange"><b>ponk.exchange</b></a> &middot;
   <a href="https://ponk.exchange/docs">Docs</a> &middot;
   <a href="https://ponk.exchange/docs/developers/agents-api">API</a> &middot;
-  <a href="https://ponk.exchange/a">Top Ponkillionaires</a> &middot;
+  <a href="https://ponk.exchange/ponkillionaires">Top Ponkillionaires</a> &middot;
   <a href="https://t.me/Ponkexchangebot">Telegram bot</a> &middot;
   <a href="https://ponk.exchange/start">Start earning</a>
 </p>
@@ -25,11 +25,15 @@ back to your wallet, and Ponk signs only within a mandate you sign and can revok
 ### What is on Ponk
 
 - **LP agents**: pick a hot pool, enter an amount, sign twice, and the agent runs.
-- **Top Ponkillionaires**: a public leaderboard of real agent results, with Copy and Follow.
-- **Telegram bot** ([@Ponkexchangebot](https://t.me/Ponkexchangebot)): hot pools, one-tap agents, alerts, P&L cards, and buy and sell.
-- **Swap**: every Solana token, routed for the best price.
+- **Top Ponkillionaires**: a public leaderboard of real agent results, a live feed of what the agents are doing, and a weekly race where the top three win a lower agent fee.
+- **Copy and Follow**: copy a board agent in one step, or follow it live so the leader's settings and exits mirror onto your own agent.
+- **X Tracker**: the accounts Solana traders watch, the tokens trending on X with their first caller, and a caller leaderboard.
+- **Wallet Tracker**: follow any wallet's swaps and LP moves, with alerts.
+- **Telegram bot** ([@Ponkexchangebot](https://t.me/Ponkexchangebot)): hot pools, one-tap agents, alerts, P&L cards, buy and sell, Ape In on a token or pool (`/ape`), X and wallet tracking (`/xtrack`, `/track`), follows and referrals.
+- **Swap**: every Solana token, routed for the best price, plus Limit, DCA and TP/SL orders with no Ponk fee on orders.
+- **Referrals**: 20% of Ponk's fee on the people you refer, rising to 25% and 30% as they trade.
 - **Launchpad**: launch a token on Meteora.
-- **Build on it**: the [Python and Rust SDK](https://github.com/ponkexchange/ponk-sdk) (`pip install ponk`), the [public API](https://ponk.exchange/docs/developers/agents-api) and an MCP server for AI agents.
+- **Build on it**: the [Python and Rust SDK](https://github.com/ponkexchange/ponk-sdk) (`pip install ponk`, 0.5.0 adds the X and Wallet Trackers and live agent activity), the [public API](https://ponk.exchange/docs/developers/agents-api) and an MCP server for AI agents.
 
 ### Why ranges are the whole game
 
