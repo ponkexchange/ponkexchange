@@ -1,150 +1,57 @@
 <p align="center">
-  <img src="https://ponk.exchange/brand/ponk-wordmark.png" alt="ponk.exchange" width="300">
+  <img src="./banner.png" alt="ponk x GitHub" width="100%">
 </p>
 
-<h3 align="center">Autonomous Liquidity Management &middot; Built on Solana</h3>
+## Ponk ☁️
 
-<p align="center">
-  <a href="https://ponk.exchange"><b>ponk.exchange</b></a> &middot;
-  <a href="https://ponk.exchange/docs">Docs</a> &middot;
-  <a href="https://ponk.exchange/docs/developers/agents-api">API</a> &middot;
-  <a href="https://ponk.exchange/ponkillionaires">Top Ponkillionaires</a> &middot;
-  <a href="https://t.me/Ponkexchangebot">Telegram bot</a> &middot;
-  <a href="https://ponk.exchange/start">Start earning</a>
-</p>
+**Autonomous liquidity on Solana.** LP agents that open, rebalance, compound and exit concentrated positions on Meteora, Orca and Raydium, plus swap, trackers and a launchpad.
 
----
+[ponk.exchange](https://ponk.exchange) · [Docs](https://ponk.exchange/docs) · [X](https://x.com/ponkexchange) · [Telegram](https://t.me/ponkexchange) · [Status](https://ponk.exchange/status)
 
-An agent opens a concentrated LP position, collects the fees, compounds them, and
-moves the range when the price does. Across **Meteora DLMM**, **Orca Whirlpools**
-and **Raydium CLMM**.
+## Documentation
 
-Live on mainnet with real funds. Each agent has its own wallet, withdrawals only go
-back to your wallet, and Ponk signs only within a mandate you sign and can revoke.
+- [Getting started](https://ponk.exchange/docs)
+- [Create an agent](https://ponk.exchange/docs/agents/create-agent)
+- [Ponk Copilot](https://ponk.exchange/docs/agents/copilot)
+- [Strategies](https://ponk.exchange/docs/agents/strategies)
+- [Venues](https://ponk.exchange/docs/agents/venues)
+- [Risk controls](https://ponk.exchange/docs/agents/risk-controls)
+- [Fees and referrals](https://ponk.exchange/docs/agents/fees-referrals)
 
-### What is on Ponk
+## Products
 
-- **LP agents**: pick a hot pool, enter an amount, sign twice, and the agent runs.
-- **Top Ponkillionaires**: a public leaderboard of real agent results, a live feed of what the agents are doing, and a weekly race where the top three win a lower agent fee.
-- **Copy and Follow**: copy a board agent in one step, or follow it live so the leader's settings and exits mirror onto your own agent.
-- **X Tracker**: the accounts Solana traders watch, the tokens trending on X with their first caller, and a caller leaderboard.
-- **Wallet Tracker**: follow any wallet's swaps and LP moves, with alerts.
-- **Telegram bot** ([@Ponkexchangebot](https://t.me/Ponkexchangebot)): hot pools, one-tap agents, alerts, P&L cards, buy and sell, Ape In on a token or pool (`/ape`), X and wallet tracking (`/xtrack`, `/track`), follows and referrals.
-- **Swap**: every Solana token, routed for the best price, plus Limit, DCA and TP/SL orders with no Ponk fee on orders.
-- **Referrals**: 20% of Ponk's fee on the people you refer, rising to 25% and 30% as they trade.
-- **Launchpad**: launch a token on Meteora.
-- **Build on it**: the [Python and Rust SDK](https://github.com/ponkexchange/ponk-sdk) (`pip install ponk`, 0.5.0 adds the X and Wallet Trackers and live agent activity), the [public API](https://ponk.exchange/docs/developers/agents-api) and an MCP server for AI agents.
+- [LP Agents](https://ponk.exchange/agents): autonomous concentrated liquidity across Meteora DLMM, Orca Whirlpools and Raydium CLMM
+- [Ponk Copilot](https://ponk.exchange/docs/agents/copilot): one sentence to a planned, replayed fleet of agents, started with one signature
+- [Swap](https://ponk.exchange): market, limit, DCA and TP/SL
+- [Discover](https://ponk.exchange/discover): LP opportunities, the [X Tracker](https://ponk.exchange/docs/trackers/x) and the [Wallet Tracker](https://ponk.exchange/docs/trackers/wallets)
+- [Plot](https://ponk.exchange/plot): backtest a range on a pool's real history
+- [Top Ponkillionaires](https://ponk.exchange/ponkillionaires): the public agent leaderboard
+- [Launchpad](https://ponk.exchange/docs/dex/launch-a-token)
+- [Telegram bot](https://t.me/Ponkexchangebot): trade, run agents and get alerts from Telegram
 
-### Why ranges are the whole game
+## Build on Ponk
 
-Concentrated liquidity earns fees only while price is inside your range. Too tight
-and you are out of range earning nothing; too wide and your capital is spread so
-thin the fees do not cover divergence. The job is choosing a range, knowing when it
-stopped being right, and moving it **only when moving it is worth more than it costs**.
+### SDKs
 
-That last clause is where most automation goes wrong. A rebalance is not free: gas,
-a balancing swap, rent, and a performance fee. An agent that rebalances on every
-wobble loses to one that holds.
+- Python: [`ponk`](https://pypi.org/project/ponk/) on PyPI ([source](https://github.com/ponkexchange/ponk-sdk))
+- Rust: [`ponk-sdk/rust`](https://github.com/ponkexchange/ponk-sdk/tree/main/rust)
+- TypeScript launch kit: [`@ponkrain/sdk`](https://github.com/ponkexchange/ponk-rain)
 
-### A bin position has a hard range ceiling, and it is a storage limit
+### APIs
 
-A DLMM position stores per-bin shares in a fixed-size account. Meteora caps a
-position at 70 bins. On the deepest SOL/USDC pool, bin step 4 bps:
+- [Agents API](https://ponk.exchange/docs/developers/agents-api): `/v1`, API keys, every site action including fleets
+- [Public API](https://ponk.exchange/docs/developers/public-api): pools, quotes, prices, no key needed
 
-```
-69 usable bins x 4 bps  ->  +/-1.37%
-```
+### AI and MCP
 
-No configuration raises it. If you have been asked for a +/-5% range on that pool,
-it cannot be built there, and an interface offering it is quietly clamping you.
+- MCP server: `https://ponk.exchange/mcp` for Claude, ChatGPT, Cursor and any MCP client, with wallet sign-in ([guide](https://ponk.exchange/docs/developers))
+- [`llms.txt`](https://ponk.exchange/llms.txt)
 
-A **CLMM** stores one liquidity value for the whole range instead of per-tick
-shares, so it has no equivalent ceiling:
+## Research
 
-```
-+/-1.37%  ->  136 ticks each side
-+/-3%     ->  296
-+/-5%     ->  488
-+/-6%     ->  583
-```
+- [Ponk's Law](https://github.com/ponkexchange/ponks-law): the survival-weighted value model the agents run on
 
-Same fee tier, no cap. That is a property of the venue, not a feature one team
-shipped and another did not.
+## Security
 
-### Verify the chain, not the docs
-
-Published program source is not the deployed program. Before encoding a single
-Raydium CLMM instruction we checked the layouts against mainnet, and two things did
-not match the repository:
-
-- `protocol_position` is marked non-writable and "deprecated" in current source.
-  On the deployed program it is **writable**. Encoding it read-only fails.
-- `DecreaseLiquidityV2` declares 16 accounts. The real instruction carries **17**:
-  a writable `pool_tick_array_bitmap_extension` PDA appended as a remaining account.
-
-We also confirmed the `PersonalPositionState` discriminator against 176,001 live
-accounts before trusting our decoder.
-
-If you are integrating a Solana AMM: decode a real account and read a real
-transaction before you ship an encoder. The cost of being wrong is not a failed
-build, it is a transaction that addresses the wrong account.
-
-### How the decision engine thinks
-
-The objective is **not** "maximize fees", which is pathological: tighter ranges
-capture more fees right up until divergence and churn destroy the advantage. It is
-*maximize incremental net value versus an appropriate control, subject to an
-explicit risk mandate*.
-
-**HOLD is a real candidate.** It competes on expected value like any action, and it
-has to be beaten by a margin rather than by a cent, because an `argmax` over a
-noisy estimator is a machine that turns noise into transaction fees.
-
-**Safety constraints live outside the optimizer.** Cooldowns, anti-thrash floors and
-the per-pool re-entry rule each exist because something went wrong once. They are
-applied before expected value is ever compared, so no estimator can discover that
-overriding one looks profitable.
-
-**A recenter is one transaction.** Remove, close and re-open land together or not at
-all. A remove that lands without its re-open leaves a user in cash and out of range.
-
-### Security
-
-The web application, the public API and the MCP server were assessed by **zauth
-(Vector)** on 29 September 2026: a deep scan across 51 endpoints, 5 subdomains,
-4 forms and 58 input vectors, run over 389 turns, with findings verified by
-browser-based proof of concept.
-
-**12 findings: 3 high, 5 medium, 1 low, 3 informational. No critical.**
-
-**Every finding was remediated the following day, 30 September 2026.** Eight are
-fixed and closed; the ninth, a missing Content-Security-Policy, ships a policy
-plus a live violation collector in report-only mode and is described as
-partially fixed rather than closed, because report-only does not block.
-
-Each fix was verified against the LIVE SITE by re-running the assessor's own
-reproduction steps afterwards, not by reading the diff. Two examples of what
-that caught: the first attempt at the Content-Security-Policy silently replaced
-a stricter per-response policy on the image proxy, and the nonce rate limit was
-confirmed by sending 26 requests with 26 forged client-IP headers straight at
-the origin and watching them share one bucket.
-
-- [**Read the report (PDF)**](https://ponk.exchange/audits/zauth-ponk-exchange-2026-09-29.pdf)
-- [**Audits**](https://ponk.exchange/docs/audits) in the docs, with the per-finding
-  remediation table
-
-To report something, see
-[SECURITY.md](https://github.com/ponkexchange/ponkexchange/blob/main/SECURITY.md).
-
-### Principles
-
-**Numbers a user might act on are never fabricated.** A value we cannot compute
-renders as a dash and says why.
-
-**Activity is not the product. Selectivity is.** An agent that fires all day is not
-working harder than one that holds. `evaluated 357 times, acted 0 times` is a good
-day when nothing was worth paying for, and the product says so.
-
-<p align="center">
-  <sub><a href="https://ponk.exchange">ponk.exchange</a> &middot; Solana</sub>
-</p>
+- [Audits](https://ponk.exchange/docs/audits) · [Report (PDF)](https://ponk.exchange/audits/zauth-ponk-exchange-2026-09-29.pdf)
+- [Report a vulnerability](./SECURITY.md)
