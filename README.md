@@ -51,7 +51,6 @@ You hold your own funds on every chain. An agent has its own wallet, acts only i
 - Command line: [`ponk-cli`](https://crates.io/crates/ponk-cli), `cargo install ponk-cli`
 
 All three cover every chain: list an EVM chain's pools, create an agent on one, read its wallet, position and farm rewards, and get the link where your own wallets fund it and sign.
-- TypeScript launch kit: [`@ponkrain/sdk`](https://github.com/ponkexchange/ponk-rain)
 
 ### APIs
 
